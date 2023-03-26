@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>D'Hont Seçim Simülatörü</title>
+    <link rel="stylesheet" href="dhont.css">
+</head>
+<body>
+    <center><h1>D'Hont Seçim Simülatörü</h1></center>
+    <center><div>
+        <button onclick="calculateDivision()">Hesaplama</button>
+        <h3 id="mv-sayisi"></h3>
+    </div></center>
+    <br>
+    <div class="container">
+        <div class="provinces">
+            <svg id="turkey-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"></svg>
+        </div>
+        <div id="table-container"></div>
+    </div>
+
+    <div id="logo-container"></div>
+
+
+    <script src="dhont.js"></script>
+    <script> loadMap();</script>
+    <script> loadPartyLogos();</script>
+    
+</body>
+</html>
