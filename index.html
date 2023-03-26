@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>D'Hont Seçim Simülatörü</title>
     <link rel="stylesheet" href="dhont.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script> 
+    <script src="https://code.highcharts.com/modules/item-series.js"></script>
 </head>
 <body>
     <center><h1>D'Hont Seçim Simülatörü</h1></center>
     <center><div>
-        <button onclick="calculateDivision()">Hesaplama</button>
+        <button onclick="calculateDivision(); createColumnChart(); createItemChart()">Hesaplama</button>
         <h3 id="mv-sayisi"></h3>
     </div></center>
     <br>
@@ -19,7 +21,14 @@
         <div id="table-container"></div>
     </div>
 
-    <div id="logo-container"></div>
+    <div class="chart">
+        <div id="chart-container1"></div>
+        <div id="chart-container2"></div>
+    </div>
+
+    <div class="logo-container">
+      <div id="logos"></div>
+    </div>
 
 
     <script src="dhont.js"></script>

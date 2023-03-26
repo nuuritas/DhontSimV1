@@ -191,3 +191,138 @@ function loadPartyLogos() {
     })
     .catch(error => console.error(error));
 }
+
+function createColumnChart() {
+  // Get the table element
+  const table = document.getElementById("table-container");
+
+  // Get the table rows
+  const rows = table.querySelectorAll("tr");
+
+  console.log(rows);
+
+  // Initialize an empty data array for Highcharts
+  const data = [];
+
+  // Loop through the rows starting from the second row
+  
+  for (let i = 1; i < rows.length; i++) {
+
+    // Get the party name and seat count
+    const parties = rows[i].querySelector("td:nth-child(1)").textContent;
+    const seats = rows[i].querySelector(`td:nth-child(${n + 3})`).textContent;
+
+    if (seats != 0) {
+      data.push({ name: parties, y: parseInt(seats) });
+    }
+  }
+
+  console.log(data);
+  // Create the Highcharts chart
+  Highcharts.chart("chart-container1", {
+    chart: {
+      type: "column",
+    },
+    title: {
+      text: "Seçim Sonuçları",
+    },
+    xAxis: {
+      type: "category",
+      labels: {
+        rotation: 0,
+      },
+    },
+    yAxis: {
+      title: {
+        text: "Milletvekili Sayısı",
+      },
+    },
+    series: [
+      {
+        name: "Parti:",
+        data: data,
+      },
+    ],
+  });
+}
+
+
+function createItemChart() {
+  // Get the table element
+  const table = document.getElementById("table-container");
+
+  // Get the table rows
+  const rows = table.querySelectorAll("tr");
+
+  // Initialize an empty data array for Highcharts
+  const data = [];
+
+  // Loop through the rows starting from the second row
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+
+    // Get the columns in the row
+    const columns = row.querySelectorAll("td");
+
+    // Get the party name, seat count, and color
+    const parties = rows[i].querySelector("td:nth-child(1)").textContent;
+    const seats = rows[i].querySelector(`td:nth-child(${n + 3})`).textContent;
+    
+
+    // Add the party, seat count, and color to the data array
+    data.push({ name: parties, y: parseInt(seats), label: parties, color: "#" + Math.floor(Math.random()*16777215).toString(16)});
+  }
+
+
+  // Create the Highcharts chart
+  Highcharts.chart("chart-container2", {
+    chart: {
+      type: "item",
+    },
+    title: {
+      text: "Seçim Sonuçları",
+    },
+    legend: {
+      labelFormat: '{name} <span style="opacity: 0.4">{y}</span>'
+    },
+    series: [
+      {
+        name: "Partiler",
+        keys: ["name", "y", "color", "label"],
+        data: data,
+        dataLabels: {
+          enabled: true,
+          format: "{point.label}",
+          style: {
+            textOutline: "3px contrast",
+          },
+        },
+
+        // Circular options
+        center: ["50%", "88%"],
+        size: "170%",
+        startAngle: -100,
+        endAngle: 100,
+      },
+    ],
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 600,
+          },
+          chartOptions: {
+            series: [
+              {
+                dataLabels: {
+                  distance: -30,
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  });
+}

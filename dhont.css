@@ -106,6 +106,7 @@ path.city:hover + #tooltip {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  width: 100%;
 }
 
 .party-logo {
@@ -113,6 +114,17 @@ path.city:hover + #tooltip {
   height: 50px;
   margin: 10px;
 }
+
+#chart-container1 {
+  float: left;
+  width: 50%;
+}
+
+#chart-container2 {
+  float: right;
+  width: 50%;
+}
+
 
 
 
