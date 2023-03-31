@@ -107,6 +107,12 @@ path.city:hover + #tooltip {
   width: 50%;
 }
 
+#table-container {
+  float: right;
+  width: 50%;
+}
+
+
 
 .party-logo {
   width: 40px;
@@ -151,9 +157,10 @@ path.city:hover + #tooltip {
 
 .button-container {
   display: flex;
-  justify-content: left;
-  align-items: left;
-  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  size: 20px;
 }
 
 
@@ -194,4 +201,7 @@ path.city:hover + #tooltip {
   padding: 0;
 }
 
+#table-container td:first-child {
+  min-width: 150px !important;
+}
 

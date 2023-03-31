@@ -365,9 +365,6 @@ function calculateDivision() {
       const lastCell = row.querySelector("td:last-child");
       lastCell.textContent = selectedPersonNumbers[rowIndex];
     });
-    
-
-    
       }
 }
 
