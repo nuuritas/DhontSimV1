@@ -78,5 +78,6 @@
     { "name": "Karabük", "value": 3 },
     { "name": "Kilis", "value": 2 },
     { "name": "Osmaniye", "value": 4 },
-    { "name": "Düzce", "value": 3 }
+    { "name": "Düzce", "value": 3 },
+    { "name": "Kayseri", "value": 10 }
     ]

@@ -30,6 +30,7 @@ h1 {
   font-size: 36px;
   font-weight: bold;
 }
+
 select {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -90,6 +91,12 @@ path.city:hover + #tooltip {
   display: flex;
 }
 
+.tables {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
 .provinces {
   float: right;
   width: 50%;
@@ -100,19 +107,11 @@ path.city:hover + #tooltip {
   width: 50%;
 }
 
-.party-logo-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-}
 
 .party-logo {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
+  width: 40px;
+  height: 40px;
+  margin: 00px;
 }
 
 #chart-container1 {
@@ -125,6 +124,74 @@ path.city:hover + #tooltip {
   width: 50%;
 }
 
+.party-cell {
+  width: 150px !important; /* Adjust this value as needed */
+}
 
+
+#table-container2 img {
+  width: 30px;
+  height: 30px;
+}
+
+
+.logo-container {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  margin-bottom: 20px;
+}
+
+#logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+
+.party-logo {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+}
+
+#table-container tr:nth-child(-n+2) td:first-child {
+  width: 150px;
+  height: 90px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#table-container tr:nth-child(n+3) td:first-child {
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#turkey-map {
+  margin: 0;
+  padding: 0;
+}
+.provinces {
+  float: right;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
 
 

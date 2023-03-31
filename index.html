@@ -9,16 +9,22 @@
 </head>
 <body>
     <center><h1>D'Hont Seçim Simülatörü</h1></center>
-    <center><div>
-        <button onclick="calculateDivision(); createColumnChart(); createItemChart()">Hesaplama</button>
-        <h3 id="mv-sayisi"></h3>
-    </div></center>
+        <div class="button-container">
+            <h3 id="mv-sayisi"></h3> 
+            <button onclick="calculateDivision(); createItemChart()">Hesaplama</button>
+        </div>
+        <div class="logo-container">
+            <div id="logos"></div>
+        </div>
     <br>
     <div class="container">
         <div class="provinces">
-            <svg id="turkey-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"></svg>
+            <svg id="turkey-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" style="height: 350px"></svg>
+            <div id="table-container2"></div>
         </div>
-        <div id="table-container"></div>
+        <div class = "tables">
+            <div id="table-container"></div>
+        </div>
     </div>
 
     <div class="chart">
@@ -26,14 +32,11 @@
         <div id="chart-container2"></div>
     </div>
 
-    <div class="logo-container">
-      <div id="logos"></div>
-    </div>
-
 
     <script src="dhont.js"></script>
     <script> loadMap();</script>
     <script> loadPartyLogos();</script>
-    
+    <script> old_voting_fetch();</script>
+    <script> old_mv_fetch();</script>
 </body>
 </html>
